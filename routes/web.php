@@ -2,9 +2,10 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\backend\MessageController;
 use App\Http\Controllers\backend\ApiController;
+use App\Http\Controllers\backend\MessageController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\StudentController;
 use App\Http\Controllers\backend\AdvocateController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Middleware\backendAuthenticationMiddleware;
@@ -38,6 +39,15 @@ Route::prefix('admin')->group(function () {
             Route::match(['get','post'],'message/edit/{id}',[MessageController::class, 'message_edit'])->name('message.edit');
             Route::get('message/list',[MessageController::class, 'message_list'])->name('message.list');
             Route::get('message/delete/{id}',[MessageController::class, 'message_delete'])->name('message.delete');
+
+            //Upload Files
+            Route::get('/students/create', [StudentController::class, 'create'])->name('student.add');
+            Route::get('/students', [StudentController::class, 'index'])->name('student.list');
+            Route::post('/students', [StudentController::class, 'store'])->name('student.store');
+            Route::get('/students/show/{id}', [StudentController::class, 'show'])->name('student.show');
+            Route::get('/students/edit/{id}', [StudentController::class, 'edit'])->name('student.edit');
+            Route::post('/students/update/{id}', [StudentController::class, 'update'])->name('student.update');
+            Route::delete('/students/delete/{id}', [StudentController::class, 'destroy'])->name('student.delete');
 
            
         });
