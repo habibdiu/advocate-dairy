@@ -20,7 +20,7 @@
                         <span class="link-title">Dashboard</span>
                     </a>
                 </li>
-                <!--   Students   -->
+                <!--   Advocate   -->
                 <li
                     class="nav-item {{ $data['active_menu'] == 'advocate_add' || $data['active_menu'] == 'advocate_edit' || $data['active_menu'] == 'advocate_list' ? 'active' : '' }}">
                     <a class="nav-link" data-bs-toggle="collapse" href="#advocate" role="button" aria-expanded="false"
@@ -73,6 +73,32 @@
                     </div>
                 </li>
                 
+
+
+
+                <!--   SMS MAnage   -->
+                <li
+                    class="nav-item {{ $data['active_menu'] == 'sms_add' || $data['active_menu'] == 'sms_list' ? 'active' : '' }}">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#sms" role="button" aria-expanded="false"
+                        aria-controls="sms">
+                        <i class="fa-regular fa-user"></i>
+                        <span class="link-title">SMS History Manage</span>
+                        <i class="fa-solid fa-chevron-down link-arrow"></i>
+                    </a>
+                    <div class="collapse" id="sms">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item ">
+                                <a href="{{route('admin.sms.add')}}"
+                                    class="nav-link {{ $data['active_menu'] == 'sms_add' ? 'active' : '' }}">SMS
+                                    Add</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('admin.sms.list')}}"
+                                    class="nav-link {{ $data['active_menu'] == 'sms_list' ? 'active' : '' }}">SMS List</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 
         </ul>
 </nav>

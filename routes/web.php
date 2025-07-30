@@ -9,6 +9,7 @@ use App\Http\Controllers\backend\AdvocateController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Middleware\backendAuthenticationMiddleware;
 use App\Http\Controllers\backend\AuthenticationController;
+use App\Http\Controllers\backend\SmsController;
 
 Route::redirect('/', 'login');
 // backend 
@@ -38,6 +39,11 @@ Route::prefix('admin')->group(function () {
             Route::match(['get','post'],'message/edit/{id}',[MessageController::class, 'message_edit'])->name('message.edit');
             Route::get('message/list',[MessageController::class, 'message_list'])->name('message.list');
             Route::get('message/delete/{id}',[MessageController::class, 'message_delete'])->name('message.delete');
+
+            //SMS Manage
+            Route::match(['get','post'],'sms/add',[SmsController::class,'sms_add'])->name('sms.add');
+            Route::get('sms/list',[SmsController::class,'sms_list'])->name('sms.list');
+            Route::get('sms/delete/{id}',[SmsController::class,'sms_delete'])->name('sms.delete');
 
            
         });
