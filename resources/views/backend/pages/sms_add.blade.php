@@ -45,7 +45,7 @@
 
                                     <div class="col-md-3">
                                     <label for="sms_parts" class="form-label">SMS Parts</label>
-                                    <input type="text" class="form-control" id="sms_parts" name="sms_parts"  />
+                                    <input type="number" class="form-control" id="sms_parts" name="sms_parts"  />
                                     </div>
 
 

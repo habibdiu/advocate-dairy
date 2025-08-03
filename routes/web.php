@@ -2,9 +2,10 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\backend\MessageController;
 use App\Http\Controllers\backend\ApiController;
+use App\Http\Controllers\backend\MessageController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\StudentController;
 use App\Http\Controllers\backend\AdvocateController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Middleware\backendAuthenticationMiddleware;

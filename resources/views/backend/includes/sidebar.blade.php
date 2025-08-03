@@ -72,6 +72,30 @@
                         </ul>
                     </div>
                 </li>
+
+                {{-- Students --}}
+                <li
+                    class="nav-item {{ $data['active_menu'] == 'student_add' || $data['active_menu'] == 'student_edit' || $data['active_menu'] == 'student_list' ? 'active' : '' }}">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#student" role="button" aria-expanded="false"
+                        aria-controls="student">
+                        <i class="fa-regular fa-user"></i>
+                        <span class="link-title">Manage students</span>
+                        <i class="fa-solid fa-chevron-down link-arrow"></i>
+                    </a>
+                    <div class="collapse" id="student">
+                        <ul class="nav sub-menu">
+                            <li class="nav-item ">
+                                <a href="{{ route('admin.student.add') }}"
+                                    class="nav-link {{ $data['active_menu'] == 'student_add' ? 'active' : '' }}">student
+                                    Add</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.student.list') }}"
+                                    class="nav-link {{ $data['active_menu'] == 'student_list' ? 'active' : '' }}">student List</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 
 
 
